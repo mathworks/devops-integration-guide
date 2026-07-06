@@ -18,7 +18,7 @@ Use these integrations to run MATLAB on CI runners. For other platforms, use [MA
 | Bamboo&reg; | [MATLAB Plugin](https://github.com/mathworks/matlab-bamboo-plugin/blob/main/README.md) |
 | CircleCI&reg; | [MATLAB Orb](https://github.com/mathworks/matlab-circleci-orb/blob/master/README.md) |
 | GitHub&reg; Actions | [MATLAB Actions](https://github.com/matlab-actions)|
-| GitLab&reg; CI/CD | [MATLAB `build` Component](https://gitlab.com/explore/catalog/mathworks/components/matlab)|
+| GitLab&reg; CI/CD | [MATLAB `build` Component](https://gitlab.com/explore/catalog/mathworks/components/matlab?tab=readme)|
 | Jenkins&reg; | [MATLAB Plugin](https://plugins.jenkins.io/matlab/)|
 | TeamCity&reg; | [MATLAB Plugin](https://github.com/mathworks/matlab-teamcity-plugin/blob/main/README.md)|
 

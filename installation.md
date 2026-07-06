@@ -35,7 +35,7 @@ This table includes the typical use cases of `mpm` in CI environments.
 | Install products in a container to run your CI pipeline. | Use `mpm install` in the [Dockerfile](https://github.com/mathworks-ref-arch/matlab-dockerfile/blob/main/alternates/non-interactive/Dockerfile) for noninteractive workflows. For more information, see [Create a MATLAB Container Image for Non-Interactive Workflows](https://github.com/mathworks-ref-arch/matlab-dockerfile/tree/main/alternates/non-interactive). |
 
 > [!TIP]
-> The [`build`](https://gitlab.com/explore/catalog/mathworks/components/matlab) component for GitLab CI/CD provides a built-in mechanism for running MATLAB code and Simulink models in a container. By default, jobs created from the `build` component run using the latest release of MATLAB in the [MATLAB container on Docker&reg; Hub](https://www.mathworks.com/help/cloudcenter/ug/matlab-container-on-docker-hub.html). To include your preferred products for a given release using `mpm`, create a custom image and pass it to the `matlab_image` input of the component.
+> The [`build`](https://gitlab.com/explore/catalog/mathworks/components/matlab?tab=readme) component for GitLab CI/CD provides a built-in mechanism for running MATLAB code and Simulink models in a container. By default, jobs created from the `build` component run using the latest release of MATLAB in the [MATLAB container on Docker&reg; Hub](https://www.mathworks.com/help/cloudcenter/ug/matlab-container-on-docker-hub.html). To include your preferred products for a given release using `mpm`, create a custom image and pass it to the `matlab_image` input of the component.
 
 ## See Also
 - [License MathWorks Products in CI Environments](./licensing.md)
