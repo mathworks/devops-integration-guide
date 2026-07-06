@@ -67,7 +67,7 @@ jobs:
 For more information, see [Running jobs in a container](https://docs.github.com/en/actions/how-tos/write-workflows/choose-where-workflows-run/run-jobs-in-a-container).
 
 ### GitLab CI/CD
-To run MATLAB code and Simulink models in GitLab CI/CD, use the [`build`](https://gitlab.com/explore/catalog/mathworks/components/matlab) component. By default, jobs created from the `build` component run using the latest release of MATLAB in the [MATLAB container on Docker&reg; Hub](https://www.mathworks.com/help/cloudcenter/ug/matlab-container-on-docker-hub.html). To use your custom image, specify it with the `matlab_image` input.
+To run MATLAB code and Simulink models in GitLab CI/CD, use the [`build`](https://gitlab.com/explore/catalog/mathworks/components/matlab?tab=readme) component. By default, jobs created from the `build` component run using the latest release of MATLAB in the [MATLAB container on Docker&reg; Hub](https://www.mathworks.com/help/cloudcenter/ug/matlab-container-on-docker-hub.html). To use your custom image, specify it with the `matlab_image` input.
 
 For example, using the `build` component, in a file named `.gitlab-ci.yml` in the root of your repository, define a pipeline to run the `"test"` task in your custom container. 
 
