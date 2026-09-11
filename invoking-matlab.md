@@ -29,27 +29,28 @@ To standardize your MATLAB builds and support incremental builds, you can combin
 For more information, see [Continuous Integration with MATLAB on CI Platforms](https://www.mathworks.com/help/matlab/matlab_prog/continuous-integration-with-matlab-on-ci-platforms.html).
 
 ## Command-Line MATLAB
-You can use the [`matlab`](https://www.mathworks.com/help/matlab/ref/matlablinux.html) command with the `-batch` option in your CI pipeline configuration file to execute scripts, functions, and statements.
+To execute scripts, functions, and statements, use the [`matlab`](https://www.mathworks.com/help/matlab/ref/matlablinux.html) command with the `-batch` option in your CI pipeline configuration file.
 
 For example, this command runs the code in a file named `myscript.m`:
 ```(shell)
 matlab -batch "myscript"
 ```
-MATLAB terminates automatically with the exit code `0` if the code executes successfully without generating an error. Otherwise, MATLAB terminates with a nonzero exit code.
+If the code executes without generating an error, MATLAB terminates automatically with the exit code `0`. Otherwise, MATLAB terminates with a nonzero exit code.
 
-Consider using `matlab -batch` when:
+Consider using `matlab -batch` if:
 - Your CI platform does not have a CI platform integration for MATLAB.
 - You use custom runners.
 - You want to invoke MATLAB using a simple command-line call.
+- You invoke MATLAB from a general-purpose build system such as Bazel, CMake/CTest, Make, or Gradle.
 
 As alternatives to using `matlab -batch`:
 - For scaled workflows, you can use the [`matlab-batch` executable](https://github.com/mathworks-ref-arch/matlab-dockerfile/blob/main/alternates/non-interactive/MATLAB-BATCH.md).
-- You can call MATLAB from other languages in CI by using the associated [external language interface](https://www.mathworks.com/help/matlab/external-language-interfaces.html?s_tid=CRUX_lftnav), but these integrations typically require a specific licensing model and do not support MATLAB batch token licensing.
+- You can call MATLAB from other languages in CI by using the associated [external language interface](https://www.mathworks.com/help/matlab/external-language-interfaces.html?s_tid=CRUX_lftnav). However, these integrations typically require a specific licensing model and do not support MATLAB batch token licensing.
 
 ## Packaged MATLAB Artifacts
 When you package MATLAB artifacts, you build once with MATLAB and then run the resulting artifacts without installing MATLAB.
 
-Consider using a packaged MATLAB approach when:
+Consider using a packaged MATLAB approach if:
 - You want minimal dependencies on your CI runners.
 - You run the same workflow repeatedly.
 
@@ -65,9 +66,9 @@ You can build and distribute MATLAB code as deployable artifacts, including:
 For more information about creating deployable applications from MATLAB code using MATLAB Compiler, see [Standalone Applications](https://www.mathworks.com/help/compiler/standalone-applications.html).
 
 ## MATLAB Hosted on Server
-You can run MATLAB outside of your CI platform by invoking MATLAB remotely and using CI to orchestrate execution. You can use MATLAB Production Server&trade; to expose MATLAB functionality using REST or gRPC APIs.
+You can run MATLAB outside of your CI platform by invoking MATLAB remotely and using CI to orchestrate execution. To expose MATLAB functionality using REST or gRPC APIs, use MATLAB Production Server&trade;.
 
-Consider using MATLAB Production Server when:
+Consider using MATLAB Production Server if:
 - You have multiple pipelines that share MATLAB workloads.
 - You need more control over scaling.
 - You have a platform team or service team that owns MATLAB execution separately from CI.
@@ -94,7 +95,7 @@ For more information, see:
 - [GitLab CI/CD Integration Guide](https://www.mathworks.com/help/slcheck/padv/ug/integrate-process-into-gitlab-with-artifact-management.html)
 - [Jenkins Integration Guide](https://www.mathworks.com/help/slcheck/padv/ug/integrate-process-into-jenkins-with-artifact-management.html)
 
-Alternatively, you can use `matlab -batch` to call the `runprocess` function as shown in [Other Platforms](https://www.mathworks.com/help/slcheck/padv/ug/approaches-to-pipeline-configuration.html#mw_09108865-8cf4-4ad5-b157-e5214eae5762).
+Alternatively, to call the `runprocess` function, use `matlab -batch` as shown in [Other Platforms](https://www.mathworks.com/help/slcheck/padv/ug/approaches-to-pipeline-configuration.html#mw_09108865-8cf4-4ad5-b157-e5214eae5762).
 
 ## See Also
 - [Install MathWorks Products in CI Environments](./installation.md)

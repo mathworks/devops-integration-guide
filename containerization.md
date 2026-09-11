@@ -14,10 +14,13 @@ The [Dockerfile](https://github.com/mathworks-ref-arch/matlab-dockerfile/blob/ma
 - The latest MATLAB release (without additional toolboxes)
 - The latest [`matlab-batch`](https://github.com/mathworks-ref-arch/matlab-dockerfile/blob/main/alternates/non-interactive/MATLAB-BATCH.md) executable
 
-When creating your own container image, you can customize the Dockerfile to include additional products. For details, see [Customize the Image](https://github.com/mathworks-ref-arch/matlab-dockerfile/tree/main/alternates/non-interactive#customize-the-image).
+To include additional products in your container image, customize the Dockerfile. For details, see [Customize the Image](https://github.com/mathworks-ref-arch/matlab-dockerfile/tree/main/alternates/non-interactive#customize-the-image).
+
+> [!TIP]
+> To verify which products your container image includes, run `matlab -batch "ver"`. A missing product typically causes an `Undefined function 'functionName'` error rather than naming the missing product directly.
 
 ## License Products
-To license MathWorks products in a containerized CI workflow, use a [MATLAB batch licensing token](https://github.com/mathworks-ref-arch/matlab-dockerfile/blob/main/alternates/non-interactive/MATLAB-BATCH.md#matlab-batch-licensing-token). These tokens allow MATLAB to start in noninteractive environments. Request a token by submitting the [MATLAB Batch Licensing Pilot](https://www.mathworks.com/support/batch-tokens.html) form.
+To license MathWorks products in a containerized CI workflow, use a [MATLAB batch licensing token](https://github.com/mathworks-ref-arch/matlab-dockerfile/blob/main/alternates/non-interactive/MATLAB-BATCH.md#matlab-batch-licensing-token). These tokens enable MATLAB to start in noninteractive environments. Request a token by submitting the [MATLAB Batch Licensing Pilot](https://www.mathworks.com/support/batch-tokens.html) form.
 
 > [!NOTE]
 > Do not paste the token into the Dockerfile. Instead, store it as a secret in your CI environment and use that secret to set an environment variable named `MLM_LICENSE_TOKEN`. For an example, see [Use MATLAB Batch Licensing Token](https://github.com/matlab-actions#use-matlab-batch-licensing-token).
@@ -41,7 +44,7 @@ The following examples show how to define a CI pipeline to run the `"test"` task
 ### GitHub Actions
 To run a MATLAB build in GitHub Actions, use the [`run-build`](https://github.com/matlab-actions/run-build) action. To use your custom container image and batch licensing token, use the `container`, `image`, and `env` keywords in the workflow definition.
 
-For example, in your repository, create a YAML file in the `.github/workflows` directory to run a container from your custom image on a GitHub-hosted runner. Then, use the container to run the `"test"` task with the `run-build` action. In this example, `MyToken` is the [secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) that holds the MATLAB batch licensing token.
+For example, to run a container from your custom image on a GitHub-hosted runner, create a YAML file in the `.github/workflows` folder in your repository. Then, use the container to run the `"test"` task with the `run-build` action. In this example, `MyToken` is the [secret](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions) that holds the MATLAB batch licensing token.
 
 ```YAML
 name: CI
