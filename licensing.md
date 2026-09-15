@@ -8,15 +8,15 @@ To license products that are not automatically licensed, you can request a [MATL
 
 ## License Types for Containers and Ephemeral Environments
 
-Containers and cloud-hosted VMs regenerate host identifiers (such as MAC addresses and disk serial numbers) on every startup. License mechanisms that validate against a stable host ID fail in these environments. Choose a license mechanism that is compatible with your execution environment.
+Containers and cloud-hosted VMs regenerate host identifiers, such as MAC addresses and disk serial numbers, on every startup. Licensing mechanisms that validate against a stable host ID fail in these environments. Choose a licensing mechanism that is compatible with your execution environment.
 
-| License Mechanism | Container Compatible | Notes |
+| Licensing Mechanism | Container Compatible | Notes |
 |---|---|---|
 | Batch licensing token | Yes | The token authenticates independently of the host ID. Use batch tokens for CI. |
 | Network license manager (`port@host`) | Yes | The license server validates the license, not the local host. |
 | Node-locked license | No | This license type locks to a specific host ID. Use node-locked licenses only on persistent, self-hosted runners. |
 
-For most CI workflows, use a batch licensing token. If your organization has an existing network license server, that also works in containers. Contact your license administrator for help choosing a license mechanism.
+For most CI workflows, use a batch licensing token. If your organization already has a network license server, you can use it in containers as well. Contact your license administrator for help choosing a licensing mechanism.
 
 ## Considerations for Batch Token Licensing
 
