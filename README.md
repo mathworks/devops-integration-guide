@@ -19,7 +19,7 @@ Use the following topics to make platform-level decisions about how MATLAB and S
 - [Run MATLAB in Containers](./containerization.md)
 
 ## Feedback and Support
-If you have an enhancement request or other feedback, create an issue on the [Issues](https://github.mathworks.com/alihosey/platform-engineer/issues) page.
+If you have an enhancement request or other feedback, create an issue on the [Issues](https://github.com/mathworks/devops-integration-guide/issues) page.
 
 For support, contact [MathWorks Technical Support](https://www.mathworks.com/support/contact_us.html).
 
