@@ -60,7 +60,7 @@ jobs:
         MLM_LICENSE_TOKEN: ${{ secrets.MyToken }}
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
       - name: Run build
         uses: matlab-actions/run-build@v3
         with:
